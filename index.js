@@ -22,7 +22,7 @@ async function handleRequest(request) {
     const {searchParams, pathname} = new URL(url)
     
     //Check path
-    if (!pathname.startsWith(path)) {
+    if (!pathname.startsWith(`${path}/`) && !(pathname == path)) {
         return r404;
     }
     if (method == 'GET' && searchParams.has('dns')) {
